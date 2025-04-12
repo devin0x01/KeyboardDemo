@@ -16,11 +16,17 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        View keyboardView = findViewById(R.id.keyboard_view_container);
-
-        mRSKeyboard = new RSKeyboard(keyboardView);
         EditText etPhone = findViewById(R.id.etPhone);
+        EditText etPassword = findViewById(R.id.etPassword);
+        EditText etEmail = findViewById(R.id.etEmail);
+        EditText etName = findViewById(R.id.etName);
+
+        View keyboardView = findViewById(R.id.keyboard_view_container);
+        mRSKeyboard = new RSKeyboard(keyboardView);
         mRSKeyboard.attachTo(etPhone);
+        mRSKeyboard.attachTo(etPassword);
+        mRSKeyboard.attachTo(etEmail);
+        mRSKeyboard.attachTo(etName);
 
         mRSKeyboard.setOnKeyboardDoneListener(new RSKeyboard.OnKeyboardDoneListener() {
             @Override
